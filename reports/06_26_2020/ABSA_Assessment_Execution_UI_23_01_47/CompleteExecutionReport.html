@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ABSA Assessment Execution Report</title>
+
+	<style type='text/css'>
+			
+            
+                .report-name { padding-left: 10px; } .report-name > img { float: left;height: 90%;margin-left: 40px;margin-top: 2px;width: auto; }
+                th {background-color:#d4d4aa;border: 1px solid black;border-collapse: separate;}
+                html {font-size:16px}
+            
+		
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>
+               
+            </span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Jun 26, 2020 11:01:47 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='75%'><span class='strong'>3</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='25%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='88.235%'><span class='strong'>45</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='3.922%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='7.843%'>4</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Way2Automation UI Test</span>
+						<span class='test-time'>Jun 26, 2020 11:01:47 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 26, 2020 11:01:47 PM</span>
+	<span class='label end-time'>Jun 26, 2020 11:02:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 21s+166ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:54 PM</td>
+					<td class='step-details'>Browser launched</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:56 PM</td>
+					<td class='step-details'>Application launched</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:56 PM</td>
+					<td class='step-details'>User list table is displayed</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:01:57 PM</td>
+					<td class='step-details'>Add user -1</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:57 PM</td>
+					<td class='step-details'>Clicked on Add user</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:57 PM</td>
+					<td class='step-details'>Add user page is displayed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:58 PM</td>
+					<td class='step-details'>Text entered for element User name=Entered Text GUACxMDbng</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:58 PM</td>
+					<td class='step-details'>Text entered for element First Name=Entered Text FName1</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:58 PM</td>
+					<td class='step-details'>Text entered for element Last Name=Entered Text LName1</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:58 PM</td>
+					<td class='step-details'>Text entered for element Password=Entered Text Pass1</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:59 PM</td>
+					<td class='step-details'>Text entered for element E-mail=Entered Text admin@mail.com</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:59 PM</td>
+					<td class='step-details'>Text entered for element Cell Phone=Entered Text 082555</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:59 PM</td>
+					<td class='step-details'>Clicked on customer - company AAA</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:59 PM</td>
+					<td class='step-details'>Select:Role<br/>Option :Adminvalue is set</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:59 PM</td>
+					<td class='step-details'>Clicked on Save</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:01:59 PM</td>
+					<td class='step-details'>Verfifying added user-1</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:00 PM</td>
+					<td class='step-details'>Text entered for element Search=Entered Text GUACxMDbng</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:00 PM</td>
+					<td class='step-details'>User added</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:00 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- First Name<br/>Expected:FName1<br/>Actual ValueFName1</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:00 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- Last Name<br/>Expected:LName1<br/>Actual ValueLName1</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:01 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- User Name<br/>Expected:GUACxMDbng<br/>Actual ValueGUACxMDbng</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>11:02:01 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- Customer<br/>Expected:Company AAA<br/>Actual Value <br><b><i>Please click on screenshot for more details : </i></b><a href='file:///C:\Users\ksant\OneDrive\Documents\GitHub\ABSA_Assessment/screenshots/validation%20of%20Customer20200626110201430.png' color=#B22222>validation of Customer20200626110201430.png</a></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:02 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- Role<br/>Expected:Admin<br/>Actual ValueAdmin</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:02 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- E-mail<br/>Expected:admin@mail.com<br/>Actual Valueadmin@mail.com</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:03 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- Cell Phone<br/>Expected:082555<br/>Actual Value082555</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:02:03 PM</td>
+					<td class='step-details'>Add user -2</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:03 PM</td>
+					<td class='step-details'>Clicked on Add user</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:03 PM</td>
+					<td class='step-details'>Add user page is displayed</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:04 PM</td>
+					<td class='step-details'>Text entered for element User name=Entered Text rozisneNLH</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:04 PM</td>
+					<td class='step-details'>Text entered for element First Name=Entered Text FName2</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:04 PM</td>
+					<td class='step-details'>Text entered for element Last Name=Entered Text LName2</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:04 PM</td>
+					<td class='step-details'>Text entered for element Password=Entered Text Pass2</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:04 PM</td>
+					<td class='step-details'>Text entered for element E-mail=Entered Text customer@mail.com</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:05 PM</td>
+					<td class='step-details'>Text entered for element Cell Phone=Entered Text 083444</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:05 PM</td>
+					<td class='step-details'>Clicked on customer - company BBB</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:05 PM</td>
+					<td class='step-details'>Select:Role<br/>Option :Customervalue is set</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:05 PM</td>
+					<td class='step-details'>Clicked on Save</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:02:05 PM</td>
+					<td class='step-details'>Verfifying added user-2</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:05 PM</td>
+					<td class='step-details'>Text entered for element Search=Entered Text rozisneNLH</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:05 PM</td>
+					<td class='step-details'>User added</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:06 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- First Name<br/>Expected:FName2<br/>Actual ValueFName2</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:06 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- Last Name<br/>Expected:LName2<br/>Actual ValueLName2</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:06 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- User Name<br/>Expected:rozisneNLH<br/>Actual ValuerozisneNLH</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>11:02:07 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- Customer<br/>Expected:Company BBB<br/>Actual Value <br><b><i>Please click on screenshot for more details : </i></b><a href='file:///C:\Users\ksant\OneDrive\Documents\GitHub\ABSA_Assessment/screenshots/validation%20of%20Customer20200626110206840.png' color=#B22222>validation of Customer20200626110206840.png</a></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:07 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- Role<br/>Expected:Customer<br/>Actual ValueCustomer</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:08 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- E-mail<br/>Expected:customer@mail.com<br/>Actual Valuecustomer@mail.com</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:09 PM</td>
+					<td class='step-details'>Entered value is dispalyed in table for- Cell Phone<br/>Expected:083444<br/>Actual Value083444</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Get list of all dog breeds and verify retriever breed</span>
+						<span class='test-time'>Jun 26, 2020 11:02:10 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 26, 2020 11:02:10 PM</span>
+	<span class='label end-time'>Jun 26, 2020 11:02:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+21ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:14 PM</td>
+					<td class='step-details'>Status code is 200 for API ::/api/breeds/list/all<br/> Response body::<br><b><i>Please click on screenshot for more details : </i></b><a href='file:///C:\Users\ksant\OneDrive\Documents\GitHub\ABSA_Assessment/API_Response/listOfAllDogBreeds20200626110214278.txt' color=#B22222>listOfAllDogBreeds20200626110214278.txt</a></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:14 PM</td>
+					<td class='step-details'>Retriever breed with in the list<br><b><i>Please click on screenshot for more details : </i></b><a href='file:///C:\Users\ksant\OneDrive\Documents\GitHub\ABSA_Assessment/API_Response/retriverBreed20200626110214723.txt' color=#B22222>retriverBreed20200626110214723.txt</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>API request to produce a random image or link for the sub-breed golden</span>
+						<span class='test-time'>Jun 26, 2020 11:02:14 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 26, 2020 11:02:14 PM</span>
+	<span class='label end-time'>Jun 26, 2020 11:02:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+643ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:15 PM</td>
+					<td class='step-details'>Status code is 200 for API ::/api/breeds/image/random/golden<br/> Response body::<br><b><i>Please click on screenshot for more details : </i></b><a href='file:///C:\Users\ksant\OneDrive\Documents\GitHub\ABSA_Assessment/API_Response/random%20image%20or%20link%20for%20the%20sub-breed%20golden20200626110215365.txt' color=#B22222>random image or link for the sub-breed golden20200626110215365.txt</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>API request to produce a list of sub-breeds for retriever</span>
+						<span class='test-time'>Jun 26, 2020 11:02:15 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jun 26, 2020 11:02:15 PM</span>
+	<span class='label end-time'>Jun 26, 2020 11:02:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+552ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:15 PM</td>
+					<td class='step-details'>Status code is 200 for API ::/api/breed/retriever/list<br/> Response body::<br><b><i>Please click on screenshot for more details : </i></b><a href='file:///C:\Users\ksant\OneDrive\Documents\GitHub\ABSA_Assessment/API_Response/list%20of%20sub-breeds%20for%20retriever20200626110215921.txt' color=#B22222>list of sub-breeds for retriever20200626110215921.txt</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>4</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>51</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jun 26, 2020 11:01:47 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jun 26, 2020 11:02:15 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 28s+186ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>OS</td>
+								<td>Windows 10</td>
+							</tr>
+							<tr>
+								<td>Host Name</td>
+								<td>LAPTOP-KLNSKEJ5</td>
+							</tr>
+							<tr>
+								<td>Java Version</td>
+								<td>12.0.2</td>
+							</tr>
+							<tr>
+								<td>User Name</td>
+								<td>ksant</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 3,
+				failParent: 1,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 1,
+				
+				passChild: 45,
+				failChild: 2,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 4,
+				exceptionsChild: 2,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			
+            
+                $(document).ready(function() {
+                     $( ".status.info" ).parent().css( "background-color", "#66ccff" ); 
+                     $( ".status.pass" ).parent().css( "background-color", "#80ff80" ); 
+                     $( ".status.warning" ).parent().css( "background-color", "#ffa500" );
+                     $( ".status.skip" ).parent().css( "background-color", "#ff8c00" );
+                     $( ".status.fail" ).parent().css( "background-color", "#ff4d4d" ); 
+                     $( ".status.fatal" ).parent().css( "background-color", "#8b0000" );
+                     $( ".status.error" ).parent().css( "background-color", "#ff6347" );
+                     $(".collection-item.test.displayed.fail").css("background-color", "#ff4d4d" );
+                     $(".collection-item.test.displayed.pass").css("background-color", "#80ff80" );
+                     $(".test.displayed.fail").css("background-color", "#ff4d4d" );
+                     $(".test.displayed.pass").css("background-color", "#80ff80" );
+                     $(".test.displayed.warning").css("background-color", "#ffa500" );
+                     $(".test.displayed.skip").css("background-color", "#ff8c00" );
+                     $(".test.displayed.error").css("background-color", "#ff6347" );
+                     $(".test.displayed.fatal").css("background-color", "#8b0000" );
+                     $(".bordered.table-results").css('border', '1px solid black');
+                     $(".right.label.cyan.white-text").css('position','relative').css('right','275px');
+                     $(".dark .exception-item")
+                     $(".test-status.right.pass").css("color","#000000").css('font-weight', 'bold');
+                     $(".test-status.right.fail").css("color","#000000").css('font-weight', 'bold');
+                     $(".test-status.right.error").css("color","#000000").css('font-weight', 'bold');
+                     $(".test-status.right.fatal").css("color","#000000").css('font-weight', 'bold');
+                     $(".test-status.right.skip").css("color","#000000").css('font-weight', 'bold');
+                    
+                });
+            
+		
+ 		</script>
+	</body>
+	
+</html>

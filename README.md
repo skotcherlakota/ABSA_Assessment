@@ -10,6 +10,11 @@ Chrome latest version - if chromedriver.exe is not compatible dowload the chrome
 
 Execution:
 Run testNg.xml using TestNg suite
+or
+execution using maven
+run following commands
+mvn clean install
+mvn test -Pabsa
 
 Reports:
 Once the execution is completed results will be stored in reports folder with the name of execution date and time of execution

@@ -243,6 +243,7 @@ public class CommonMethods extends ExtentTestNGReportBuilder {
 			String sFileName = sArg + sTimeStamp.toString() + ".txt";
 			String sFullFilePath = System.getProperty("user.dir");
 			String sDir=sFullFilePath+ "/API_Response/";
+			new File(sDir).mkdir();
 			sFullFilePath = sFullFilePath + "/API_Response/" + sFileName;
 			
 			  Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -250,12 +251,6 @@ public class CommonMethods extends ExtentTestNGReportBuilder {
 		        
 		        JsonElement je = jp.parse(response);
 		        String prettyJsonString = gson.toJson(je);
-			
-			File f = new File(sDir);
-			if (!f.exists()) {
-				new File(sFullFilePath).mkdir();
-				System.out.println("Success:: created Directory:" + sFullFilePath);
-			}
 			if (sFullFilePath.contains(" ")) {
 				sHref = sFullFilePath.replaceAll(" ", "%20");
 			} else {
@@ -273,30 +268,7 @@ public class CommonMethods extends ExtentTestNGReportBuilder {
 		return sReturn;
 	}
 	
-	public static void saveResponseJSON(String response, String path) {
-	    /**
-	     * Save response json to .jenkins job > archive folder
-	     */
-	    try {
-	        System.out.println("writing response " + response);
-	        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-	        JsonParser jp = new JsonParser();
-	        
-	        JsonElement je = jp.parse(response);
-	        String prettyJsonString = gson.toJson(je);
-	        FileWriter file = new FileWriter(path + "\\response.json");
-	        file.write(prettyJsonString);
-	        file.close();
-	        File res_js = new File(path + "\\response.json");
-	        float fileSizeInBytes = res_js.length();
-	        float fileSizeInKB = fileSizeInBytes / 1024;
-	        String fileSizeInKB_rounded = String.valueOf(Math.round(fileSizeInKB * 100.0) / 100.0);
-	        System.out.println("Saved Response JSON at " + path + " and it's length in Bytes is " + fileSizeInBytes + " Bytes and in KB is " + fileSizeInKB + " KB");
-	       
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-	}
+	
 	
 	public void closeBroswer() {
 		driver.close();

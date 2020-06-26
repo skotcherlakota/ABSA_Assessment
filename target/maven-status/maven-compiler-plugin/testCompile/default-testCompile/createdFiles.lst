@@ -1,7 +1,7 @@
-apiTests\APITest.class
 utilities\ReadTestData.class
 utilities\ReadPropertiesFile.class
 uiTests\Way2Automation.class
 utilities\CommonMethods.class
+apiTests\API_Test.class
 utilities\ExtentTestNGReportBuilder.class
 PageReusables\AddUser.class

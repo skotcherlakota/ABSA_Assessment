@@ -1,0 +1,6 @@
+[
+  "chesapeake",
+  "curly",
+  "flatcoated",
+  "golden"
+]

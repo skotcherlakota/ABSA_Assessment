@@ -1,0 +1,6 @@
+{
+  "message": [
+    "https://images.dog.ceo/breeds/spaniel-irish/n02102973_2269.jpg"
+  ],
+  "status": "success"
+}
