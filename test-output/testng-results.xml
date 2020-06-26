@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Current Project Results Directory: C:\Git\ABSA_Assessment/reports/06_26_2020/ABSA_Assessment_Execution_UI_22_12_32]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2020-06-26T22:12:32 SAST" name="Suite1" finished-at="2020-06-26T22:13:06 SAST" duration-ms="33504">
+    <groups>
+    </groups>
+    <test started-at="2020-06-26T22:12:32 SAST" name="UI" finished-at="2020-06-26T22:12:59 SAST" duration-ms="27340">
+      <class name="uiTests.Way2Automation">
+        <test-method signature="way2AutomationTest()[pri:0, instance:uiTests.Way2Automation@30c15d8b]" started-at="2020-06-26T22:12:32 SAST" name="way2AutomationTest" finished-at="2020-06-26T22:12:59 SAST" duration-ms="26789" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- way2AutomationTest -->
+        <test-method is-config="true" signature="flush()[pri:0, instance:uiTests.Way2Automation@30c15d8b]" started-at="2020-06-26T22:12:59 SAST" name="flush" finished-at="2020-06-26T22:12:59 SAST" duration-ms="503" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flush -->
+      </class> <!-- uiTests.Way2Automation -->
+    </test> <!-- UI -->
+    <test started-at="2020-06-26T22:12:59 SAST" name="API" finished-at="2020-06-26T22:13:06 SAST" duration-ms="6113">
+      <class name="apiTests.API_Test">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:apiTests.API_Test@2f4948e4]" started-at="2020-06-26T22:12:32 SAST" name="beforeSuite" finished-at="2020-06-26T22:12:32 SAST" duration-ms="457" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Current Project Results Directory: C:\Git\ABSA_Assessment/reports/06_26_2020/ABSA_Assessment_Execution_UI_22_12_32]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method signature="listOfAllDogBreeds()[pri:0, instance:apiTests.API_Test@2f4948e4]" started-at="2020-06-26T22:12:59 SAST" name="listOfAllDogBreeds" finished-at="2020-06-26T22:13:04 SAST" duration-ms="4843" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listOfAllDogBreeds -->
+        <test-method signature="randomImage()[pri:0, instance:apiTests.API_Test@2f4948e4]" started-at="2020-06-26T22:13:04 SAST" name="randomImage" finished-at="2020-06-26T22:13:05 SAST" duration-ms="590" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- randomImage -->
+        <test-method signature="subBread()[pri:0, instance:apiTests.API_Test@2f4948e4]" started-at="2020-06-26T22:13:05 SAST" name="subBread" finished-at="2020-06-26T22:13:05 SAST" duration-ms="532" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- subBread -->
+        <test-method is-config="true" signature="flush()[pri:0, instance:apiTests.API_Test@2f4948e4]" started-at="2020-06-26T22:13:05 SAST" name="flush" finished-at="2020-06-26T22:13:06 SAST" duration-ms="138" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flush -->
+      </class> <!-- apiTests.API_Test -->
+    </test> <!-- API -->
+  </suite> <!-- Suite1 -->
+</testng-results>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExecutionReport>
+	<configuration>
+		<!-- report theme -->
+		<!-- standard, dark -->
+		<theme>standard</theme>
+
+		<!-- document encoding -->
+		<!-- defaults to UTF-8 -->
+		<encoding>UTF-8</encoding>
+
+		<!-- protocol for script and stylesheets -->
+		<!-- defaults to https -->
+		<protocol>https</protocol>
+
+		<!-- title of the document -->
+		<documentTitle>ABSA Assessment Execution Report</documentTitle>
+
+		<!-- report name - displayed at top-nav -->
+		<reportName><![CDATA[
+               
+            ]]></reportName>
+
+		<!-- location of charts in the test view -->
+		<!-- top, bottom -->
+		<testViewChartLocation>bottom</testViewChartLocation>
+
+		<!-- custom javascript -->
+		<scripts>
+            <![CDATA[
+                $(document).ready(function() {
+                     $( ".status.info" ).parent().css( "background-color", "#66ccff" ); 
+                     $( ".status.pass" ).parent().css( "background-color", "#80ff80" ); 
+                     $( ".status.warning" ).parent().css( "background-color", "#ffa500" );
+                     $( ".status.skip" ).parent().css( "background-color", "#ff8c00" );
+                     $( ".status.fail" ).parent().css( "background-color", "#ff4d4d" ); 
+                     $( ".status.fatal" ).parent().css( "background-color", "#8b0000" );
+                     $( ".status.error" ).parent().css( "background-color", "#ff6347" );
+                     $(".collection-item.test.displayed.fail").css("background-color", "#ff4d4d" );
+                     $(".collection-item.test.displayed.pass").css("background-color", "#80ff80" );
+                     $(".test.displayed.fail").css("background-color", "#ff4d4d" );
+                     $(".test.displayed.pass").css("background-color", "#80ff80" );
+                     $(".test.displayed.warning").css("background-color", "#ffa500" );
+                     $(".test.displayed.skip").css("background-color", "#ff8c00" );
+                     $(".test.displayed.error").css("background-color", "#ff6347" );
+                     $(".test.displayed.fatal").css("background-color", "#8b0000" );
+                     $(".bordered.table-results").css('border', '1px solid black');
+                     $(".right.label.cyan.white-text").css('position','relative').css('right','275px');
+                     $(".dark .exception-item")
+                     $(".test-status.right.pass").css("color","#000000").css('font-weight', 'bold');
+                     $(".test-status.right.fail").css("color","#000000").css('font-weight', 'bold');
+                     $(".test-status.right.error").css("color","#000000").css('font-weight', 'bold');
+                     $(".test-status.right.fatal").css("color","#000000").css('font-weight', 'bold');
+                     $(".test-status.right.skip").css("color","#000000").css('font-weight', 'bold');
+                    
+                });
+            ]]>
+		</scripts>
+
+		<!-- custom styles -->
+		<styles>
+            <![CDATA[
+                .report-name { padding-left: 10px; } .report-name > img { float: left;height: 90%;margin-left: 40px;margin-top: 2px;width: auto; }
+                th {background-color:#d4d4aa;border: 1px solid black;border-collapse: separate;}
+                html {font-size:16px}
+            ]]>
+		</styles>
+	</configuration>
+</ExecutionReport>

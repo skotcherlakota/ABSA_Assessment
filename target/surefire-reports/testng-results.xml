@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-06-24T20:41:33Z" name="apiTests.APITest" finished-at="2020-06-24T20:41:33Z" duration-ms="20">
+    <groups>
+    </groups>
+    <test started-at="2020-06-24T20:41:33Z" name="Command line test" finished-at="2020-06-24T20:41:33Z" duration-ms="20">
+      <class name="apiTests.APITest">
+        <test-method signature="getResponseBody()[pri:0, instance:apiTests.APITest@289d1c02]" started-at="2020-06-24T22:41:33Z" name="getResponseBody" finished-at="2020-06-24T22:41:33Z" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResponseBody -->
+      </class> <!-- apiTests.APITest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- apiTests.APITest -->
+</testng-results>
